@@ -3,6 +3,7 @@ import time
 from parse import compile
 import os
 import re
+import time
 import threading
 
 import mastodon as mstdn
@@ -94,7 +95,7 @@ if __name__ == "__main__":
         try:
             main()
         except mstdn.MastodonNetworkError:
-            pass
+            time.sleep(60)
         except Exception as e:
             print(e)
 
